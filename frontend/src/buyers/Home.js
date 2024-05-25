@@ -35,7 +35,7 @@ const HomeBuyer = () => {
     <div className='count'>
     <div class="container mt-3 mb-5">
     <div class="row">
-    <div class="col  mt-3 box-2">
+    <div class="col mt-3 box-2">
     <div className='text-center'>
     <SearchOutlined className='mb-2 text-center' style={{fontSize:"30px"}}/>
     </div>
