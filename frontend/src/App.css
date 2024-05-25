@@ -1,0 +1,78 @@
+
+.App {
+  background-color: white;
+}
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+}
+.bg{
+  background-image: url("images/home.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.Auth-form {
+  width: 500px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-left: 28%;
+  border-radius: 8px;
+  background-color: #0B1522;
+  color: white;
+}
+
+.Post-form {
+  width: 580px;
+  box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 10px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 25%;
+  border-radius: 8px;
+  background-color: #0b1522;
+  color: white;
+}
+
+.Auth-form-content {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.Auth-form-title {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  font-weight: 800;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.heading{
+  margin: 1% 2% !important;
+  align-items: center;
+}
+.primary{
+  background-color: #a50153 !important;
+  padding: 2% 2% !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+}
+.primary:hover{
+  background-color: #a50153 !important;
+  padding: 2% 2% !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+}
+.error{
+  color: "red";
+}

@@ -1,0 +1,243 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+.header{
+    width: 100vw;
+    height: 80vh;
+}
+.typewrite{
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .mainarea {
+    background-color: #0B1522;
+    display: flex;
+    justify-content: center; 
+background-color:#060C14;
+border-radius: 10px;
+  margin: 2% 2%;
+  padding-top: 1%;
+  }
+.page{
+  color: #fff !important;
+}
+  .center-align{
+    display: flex;
+    justify-content: center; 
+  margin: 2% 2%;
+  padding-top: 1%;
+  }
+  .center-align-mt0{
+    display: flex;
+    justify-content: center; 
+  margin: 1% 2%;
+  }
+  .center-align-mt1{
+    display: flex;
+    justify-content: center; 
+  }
+  .ant-pagination-item-link{
+    color: #fff !important;
+  }
+  .ant-pagination-item-active{
+    color: #060C14 !important;
+  }
+
+
+  .mainarea label{
+    color:#fff  !important; 
+  }
+  
+  .button{
+    background-color: #fa8948;
+    color: aliceblue;
+    text-align: left;
+    font-size: 16px;
+    width: 30%;
+    margin-top: 5% ;
+  }
+  .button-align{
+    background-color: #d65e19;
+    color: aliceblue;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+    border: none;
+  }
+  .btn.btn-primary{
+    background-color: #d65e19 !important;
+    border: none!important;
+
+  }
+  .color{
+    color:#d65e19;
+  }
+  .button-align:hover{
+    background-color: #d65e19!important;
+    color: aliceblue !important;
+    text-align: center;
+    font-size: large;
+    width: 100%;
+    margin-top: 5%;
+    border: none !important;
+  }
+  .button:hover{
+    background-color: #f37b36  !important; 
+    color: aliceblue  !important;
+    font-size: large;
+    text-align: left;
+    width: 30%;
+    margin-top: 5%;
+    border: none !important;
+  }
+  .count{
+    justify-content: space-between;
+
+  }
+  .box-1 ,.box-3{
+    background-color: #060C14;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: #fff;
+    padding: 50px;
+    
+  }
+  .box-2{
+
+    border-radius: 10px;
+    margin-right: 10px;
+    color: #ffffff;
+    padding: 50px;
+    min-height:100%;
+    background:linear-gradient(0deg, rgba(36, 32, 28, 0.863), rgba(255, 108, 23, 0.712)), url('../images/main-pg.jpeg');
+    background-size:cover;
+  }
+  .box-4{
+
+    border-radius: 10px;
+    margin-right: 10px;
+    color: #ffffff;
+    padding: 50px;
+    min-height:100%;
+    background:linear-gradient(0deg, rgba(36, 32, 28, 0.863), rgba(255, 108, 23, 0.712)), url('../images/villa.jpg');
+    background-size:cover;
+  }
+
+@media (min-width: 768px) { 
+    .header img {
+        width: 800px; 
+    }
+}
+@media (max-width: 768px) { 
+    .header img {
+        width: 500px; 
+    }
+}
+
+@media (min-width: 992px) { 
+    .header img {
+        width: 700px; 
+    }
+}
+
+@media (min-width: 1200px) { 
+    .header img {
+        width: 900px; 
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+.ad-area{
+  background-color:#060C14;
+border-radius: 10px;
+color:#fff;
+  margin: 2% 2%;
+}
+.area{
+  margin: 0px 5px;
+}
+.header2-img{
+  background-image: url("../images/rent.jpg");
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.button-post{
+  width: 150px;
+  color: #ffffff;
+  background-color: #f37b36;
+  border: none;
+}
+.button-post:hover{
+    width: 150px;
+    color: #ffffff!important;
+    background-color: #f77226 !important;
+    border: none;
+  }
+.content-post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+.ml-3{
+  margin-left: 50px;
+}
+.ml-6{
+  margin-left: 100px;
+}
+.footer{
+  background-color: #060C14;
+  color: #fff;
+  height: 10vh;
+  margin: 0;
+}
+.footer h6{
+  color: #fff;
+  font-size: 18px;
+}
+.footer p{
+  font-size: 14px;
+}
+.fo{
+  font-size: 88px;
+}
+.po{
+  font-size: 28px;
+}
+.ant-spin-dot-item {
+    background-color: orange !important;
+  }
+  .mt-6{
+    margin-top: 70px;
+  }
+  .ml-2{
+    margin-left: 10px;
+  }
+ 
+  .file-input{
+    display: none; 
+  }
+  .custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #d65e19 ;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #d65e19 ;
+  }
+  .btn.btn-primary:hover{
+    color: #fff !important;
+  }
+  
