@@ -12,6 +12,7 @@ const HomeSeller = ({user_id}) => {
     <>
         <NavbarSeller user_id={user_id}/>
         <Button onClick={goToPost} className='button-post mt-3'>Post AD</Button>
+        
     <div className='count '>
     <div class="container mt-3 mb-5 ">
     <div class="row">

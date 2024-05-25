@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../UserContext';
 import NavbarSeller from './NavBarSeller';
-import Footer from '../Footer';
 
 const Ads = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -108,7 +107,7 @@ const handleFileChange = (e) => {
             <textarea
               name="description"
               className="form-control mt-1"
-              placeholder="eg. 2BHK Villa with various facilities"
+              placeholder="description to ur property"
               value={formValues.description}
               onChange={handleInputChange}
               required
@@ -143,7 +142,7 @@ const handleFileChange = (e) => {
                 type="text"
                 name="price"
                 className="form-control mt-1"
-                placeholder="10000"
+                placeholder="1200"
                 value={formValues.price}
                 onChange={handleInputChange}
                 required
@@ -226,7 +225,7 @@ const handleFileChange = (e) => {
                 type="text"
                 name="city"
                 className="form-control mt-1"
-                placeholder="eg. Chennai"
+                placeholder="Bengaluru"
                 value={formValues.city}
                 onChange={handleInputChange}
                 required
@@ -238,7 +237,7 @@ const handleFileChange = (e) => {
                 type="text"
                 name="state"
                 className="form-control mt-1"
-                placeholder="eg. Tamil Nadu"
+                placeholder="eg.  Karnataka"
                 value={formValues.state}
                 onChange={handleInputChange}
                 required
