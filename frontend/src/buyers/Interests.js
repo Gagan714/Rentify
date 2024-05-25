@@ -17,7 +17,7 @@ const Interests = () => {
 
   const fetchData = async() => {
     try {
-      const response = await axios.get(`https://full-stack-virid.vercel.app/interest/${user?.user?.id}`);
+      const response = await axios.get(`https://rentify-rsmv.vercel.app/interest/${user?.user?.id}`);
       const adsWithImages = response.data.map(ad => {
         if (ad.image) {
           const base64Image = btoa(

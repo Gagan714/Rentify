@@ -27,7 +27,7 @@ const Filter = () => {
 
   const getAllAds = async () => {
     try {
-      const response = await axios.get(`https://full-stack-virid.vercel.app/ads`);
+      const response = await axios.get(`https://rentify-rsmv.vercel.app/ads`);
       const adsWithImages = response.data.map(ad => {
         if (ad.image) {
           const base64Image = btoa(
@@ -71,7 +71,7 @@ const Filter = () => {
     console.log('Form values:', values);
     form.validateFields()
       .then(validatedValues => {
-        axios.post('https://full-stack-virid.vercel.app/filter', validatedValues)
+        axios.post('https://rentify-rsmv.vercel.app/filter', validatedValues)
           .then(response => {
             const adsWithImages = response.data.map(ad => {
               if (ad.image) {

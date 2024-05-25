@@ -25,7 +25,7 @@ const CardAds = ({ data }) => {
           .then(values => {
             console.log(values)
 
-            axios.put(`https://full-stack-virid.vercel.app/update/${data.id}`, values)
+            axios.put(`https://rentify-rsmv.vercel.app/update/${data.id}`, values)
               .then(response => {
                 console.log('Ad details updated successfully:', response.data);
                 setIsModalVisible(false);
@@ -46,7 +46,7 @@ const CardAds = ({ data }) => {
       setIsModalVisible(false);
     };
     const handleDelete = () => {
-        axios.delete(`https://full-stack-virid.vercel.app/delete/${data.id}`)
+        axios.delete(`https://rentify-rsmv.vercel.app/delete/${data.id}`)
           .then(response => {
             window.location.reload();
             toast.success('Deleted Successfully!')
