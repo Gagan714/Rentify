@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarSeller from './NavBarSeller'
 import { HomeOutlined,SearchOutlined,UsergroupAddOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
@@ -8,11 +9,14 @@ import { useNavigate } from 'react-router-dom';
 const HomeSeller = ({user_id}) => {
     const navigate = useNavigate();
     console.log(user_id)
+    const goToPost = () => {
+      navigate('/post-ad');
+    };
   return (
     <>
         <NavbarSeller user_id={user_id}/>
         <Button onClick={goToPost} className='button-post mt-3'>Post AD</Button>
-        
+
     <div className='count '>
     <div class="container mt-3 mb-5 ">
     <div class="row">
