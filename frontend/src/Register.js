@@ -64,7 +64,7 @@ console.log(formValues)
         setLoading(true);
         e.preventDefault();
         if (authMode === "signin") {
-            axios.post('https://rentify-ten-taupe.vercel.app/signin', formValues)
+            axios.post('https://full-stack-virid.vercel.app/signin', formValues)
                 .then(response => {
                     setUserId(response.data?.user?.id);
                     setLoading(false);
@@ -88,7 +88,7 @@ console.log(formValues)
 
                 return;
             }
-            axios.post('https://rentify-ten-taupe.vercel.app/signup', formValues)
+            axios.post('https://full-stack-virid.vercel.app/signup', formValues)
                 .then(response => {
                     setAuthMode("signin");
                     setLoading(false);

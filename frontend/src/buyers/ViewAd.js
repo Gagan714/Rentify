@@ -29,7 +29,7 @@ const ViewAd = () => {
 
   const fetchSimilarData = async() => {
     try {
-      const response = await axios.get(`https://rentify-ten-taupe.vercel.app/ads/${encodeURIComponent(adId.user_id)}`);
+      const response = await axios.get(`https://full-stack-virid.vercel.app/ads/${encodeURIComponent(adId.user_id)}`);
       const simData = response.data.map(ad => {
         if (ad.image) {
           const base64Image = btoa(
@@ -53,7 +53,7 @@ const ViewAd = () => {
 
      const handleInterest = () => {
     
-    axios.post('https://rentify-ten-taupe.vercel.app/api/interest', { userId:adId.user_id, adId: adId.id })
+    axios.post('https://full-stack-virid.vercel.app/api/interest', { userId:adId.user_id, adId: adId.id })
       .then(response => {
        
         toast.success("Request sent")
@@ -71,8 +71,8 @@ const ViewAd = () => {
 
     const fetchData = async() => {
         try {
-          console.log(`https://rentify-ten-taupe.vercel.app/ads/${adId.user_id}/${adId.id}`)
-          const response = await axios.get(`https://rentify-ten-taupe.vercel.app/ads/${encodeURIComponent(adId.user_id)}/${encodeURIComponent(adId.id)}`);
+          console.log(`https://full-stack-virid.vercel.app/ads/${adId.user_id}/${adId.id}`)
+          const response = await axios.get(`https://full-stack-virid.vercel.app/ads/${encodeURIComponent(adId.user_id)}/${encodeURIComponent(adId.id)}`);
           const adsWithImages = response.data.map(ad => {
             if (ad.image) {
               const base64Image = btoa(
