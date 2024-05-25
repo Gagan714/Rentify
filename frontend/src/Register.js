@@ -110,8 +110,8 @@ console.log(formValues)
                 <div className="Auth-form-container col-md-6">
                     <div className="row ">
                         <div className='heading'>
-                            <h2 className='typewrite'>Rentify</h2>
-                            <p className='typewrite'>Renting made simple!</p>
+                            <h2>Rentify</h2>
+                            <p>Renting made simple!</p>
                         </div>
                         <form className="Auth-form mb-5" onSubmit={handleSubmit}>
                             <div className="Auth-form-content mb-5 ">
@@ -195,7 +195,7 @@ console.log(formValues)
                                             type="text"
                                             name="firstName"
                                             className="form-control mt-1"
-                                            placeholder="eg. Madhu"
+                                            placeholder=""
                                             value={formValues.firstName}
                                             onChange={handleInputChange}
                                             required
@@ -207,7 +207,7 @@ console.log(formValues)
                                             type="text"
                                             name="lastName"
                                             className="form-control mt-1"
-                                            placeholder="eg. Mitha"
+                                            placeholder=""
                                             value={formValues.lastName}
                                             onChange={handleInputChange}
                                             required
@@ -221,7 +221,7 @@ console.log(formValues)
                                     type="email"
                                     name="email"
                                     className="form-control mt-1"
-                                    placeholder="eg. demo@gmail.com"
+                                    placeholder=""
                                     value={formValues.email}
                                     onChange={handleInputChange}
                                     required
