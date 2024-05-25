@@ -8,8 +8,6 @@ import { UserContext } from '../UserContext';
 const ViewAds = () => {
   const { user} = useContext(UserContext);
   const [loading, setLoading] = useState(true);
-
-  console.log(user)
     const [note, setNote] = useState([]);
     const [ads, setAds] = useState([]);
     const navigate = useNavigate();
@@ -43,11 +41,9 @@ setNote(response.data)
       setAds(adsWithImages);
     }catch (error) {
         setLoading(false);
-        console.error('Error fetching ads:', error);
       }
     };
   
-console.log(ads)
   return (
     <>  
     <div className='header2-img content-post '>

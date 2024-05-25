@@ -35,7 +35,6 @@ const fetchData = async() => {
     setAds(adsWithImages);
   }catch (error) {
     setLoading(false);
-      console.error('Error fetching ads:', error);
     }
   };
 

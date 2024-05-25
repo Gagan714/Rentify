@@ -47,7 +47,6 @@ const Filter = () => {
       setTotalItems(response.data.length);
       generateAreaList(response.data);
     } catch (error) {
-      console.error('Error fetching ads:', error);
     }
   };
 
@@ -68,7 +67,6 @@ const Filter = () => {
 };
 
   const handleFilterChanges = (values) => {
-    console.log('Form values:', values);
     form.validateFields()
       .then(validatedValues => {
         axios.post('https://full-stack-virid.vercel.app/filter', validatedValues)
@@ -91,11 +89,9 @@ const Filter = () => {
           })
           .catch(error => {
             toast.error("Error:Please Reload ")
-            console.error('Error:', error);
           });
       })
       .catch(info => {
-        console.log('Validate Failed:', info);
       });
   };
 

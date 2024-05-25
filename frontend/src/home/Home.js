@@ -10,7 +10,6 @@ import NavbarHome from '../buyers/NavBarHome'
 
 const Home = () => {
   const { user} = useContext(UserContext);
-  console.log(user)
  
   if (!user) {
     return <div><HomeBuyer /></div>;

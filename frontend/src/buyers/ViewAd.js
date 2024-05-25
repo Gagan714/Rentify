@@ -20,8 +20,7 @@ const ViewAd = () => {
     const [similarData, setSimilarData] = useState([]);
     const adId = useParams();
     
-    console.log(adId)
-
+    
   useEffect(() => {
     fetchData();
     fetchSimilarData();
@@ -47,7 +46,6 @@ const ViewAd = () => {
 
     }catch (error) {
         setLoading1(false)
-        console.error('Error fetching ads:', error);
       }
     };
 
@@ -57,13 +55,11 @@ const ViewAd = () => {
       .then(response => {
        
         toast.success("Request sent")
-        console.log('status updated:', response.data);
       })
       .catch(error => {
        
 
         toast.error("Error sending request")
-        console.error('Error updating like status:', error);
       });
    
   };
@@ -71,7 +67,6 @@ const ViewAd = () => {
 
     const fetchData = async() => {
         try {
-          console.log(`https://full-stack-virid.vercel.app/ads/${adId.user_id}/${adId.id}`)
           const response = await axios.get(`https://full-stack-virid.vercel.app/ads/${encodeURIComponent(adId.user_id)}/${encodeURIComponent(adId.id)}`);
           const adsWithImages = response.data.map(ad => {
             if (ad.image) {
@@ -89,7 +84,6 @@ setLoading(false);
           setAds(adsWithImages);
         }catch (error) {
             setLoading(false);
-            console.error('Error fetching ads:', error);
           }
         };
   return (

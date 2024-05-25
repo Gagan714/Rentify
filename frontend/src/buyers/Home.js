@@ -36,16 +36,10 @@ const HomeBuyer = () => {
    <NavbarBuyer /> : <NavbarHome />
     }
     <Filter />
+    <CardSlider />
     <div className='count'>
     <div class="container mt-3 mb-5">
     <div class="row">
-    <div class="col mt-3 box-1">
-    <div className='text-center'>
-    <HomeOutlined className='mb-2' style={{fontSize:"30px"}}/>
-    </div>
-    <h5>Discover your perfect home today!</h5>
-    <p>Begin your search for the perfect home today! With our extensive listings and user-friendly search tools, finding your dream home has never been easier. Start exploring now and let us help you find your ideal living space.</p>
-    </div>
     <div class="col  mt-3 box-2">
     <div className='text-center'>
     <SearchOutlined className='mb-2 text-center' style={{fontSize:"30px"}}/>
@@ -60,9 +54,15 @@ const HomeBuyer = () => {
     <h5> Connect with the rental owners!</h5>
     <p>Unlock your ideal rental property by connecting directly with our trusted landlords! Don't delay – start browsing our listings and connecting with landlords today to find the ideal rental property that suits your lifestyle.</p>
     </div>
+    <div class="col mt-3 box-1">
+    <div className='text-center'>
+    <HomeOutlined className='mb-2' style={{fontSize:"30px"}}/>
+    </div>
+    <h5>Discover your perfect home today!</h5>
+    <p>Begin your search for the perfect home today! With our extensive listings and user-friendly search tools, finding your dream home has never been easier. Start exploring now and let us help you find your ideal living space.</p>
+    </div>
   </div>
 </div>
-    <CardSlider />
 
     </div>
    

@@ -2,12 +2,13 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../UserContext';
 import NavbarSeller from './NavBarSeller';
+import { useNavigate } from 'react-router-dom';
 
 const Ads = () => {
+  const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState(null);
 
     const { user } = useContext(UserContext);
-    console.log(user)
     const [formValues, setFormValues] = useState({
       user_id: '', 
       title: '',
@@ -23,8 +24,7 @@ const Ads = () => {
       type: 'rent',
       amenities: [],
     });
-  
-console.log(formValues,user)
+
 const handleFileChange = (e) => {
   setSelectedFile(e.target.files[0]);
 };
@@ -77,9 +77,9 @@ const handleFileChange = (e) => {
         }
       });
 
-      console.log('Note created:', response.data);
+      navigate(`/ads`);
+      
     } catch (error) {
-      console.error('Error creating note:', error);
     }
   };
   return (

@@ -21,7 +21,6 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 
-console.log(process.env.DB_HOST);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,14 +37,12 @@ app.get('/ads-page', (req, res) => {
   const query = 'SELECT * FROM ads LIMIT ? OFFSET ?';
   pool.query(query, [limit, offset], (error, results) => {
     if (error) {
-      console.error('Error fetching apartments:', error);
       res.status(500).send('Error fetching apartments');
       return;
     }
     // Fetch total count of items
     pool.query('SELECT COUNT(*) AS count FROM ads', (countError, countResults) => {
       if (countError) {
-        console.error('Error fetching total count:', countError);
         res.status(500).send('Error fetching total count');
         return;
       }
@@ -57,7 +54,7 @@ app.get('/ads-page', (req, res) => {
 
 app.post('/api/like', (req, res) => {
   const { userId,adId} = req.body;
-console.log(userId,adId);
+
   const query = 'INSERT INTO liked_property (user_id,ad_id) VALUES (?, ?)';
   
   pool.query(query, [userId,adId], (error, results) => {
@@ -70,7 +67,7 @@ console.log(userId,adId);
 
 app.post('/api/interest', (req, res) => {
   const { userId,adId} = req.body;
-console.log(userId,adId);
+
   const query = 'INSERT INTO request (user_id,ad_id) VALUES (?, ?)';
   
   pool.query(query, [userId,adId], (error, results) => {
@@ -84,7 +81,7 @@ console.log(userId,adId);
 
 app.post('/filter', (req, res) => {
   const { area, type_of_home, type, min, max} = req.body;
-  console.log(req.body);
+
 
   let query = 'SELECT * FROM ads WHERE 1=1';
   const queryParams = [];
@@ -111,7 +108,6 @@ app.post('/filter', (req, res) => {
 
   pool.query(query, queryParams, (error, results) => {
     if (error) {
-      console.error('Error fetching filtered data:', error);
       res.status(500).send('Error fetching filtered data');
       return;
     }
@@ -131,10 +127,9 @@ app.get('/ads', function (req, res, next) {
 
 app.get('/ads/:user_id/:id', function (req, res, next) {
   const { user_id, id } = req.params;
-  console.log("adpi",req.params)
   const decryptedUserId = decrypt(user_id);
   const decryptedId = decrypt(id);
-  console.log(decryptedId,decryptedUserId)
+
 
   let sql = `
   SELECT ads.*, users.*
@@ -145,11 +140,10 @@ app.get('/ads/:user_id/:id', function (req, res, next) {
 
 pool.query(sql, [decryptedId,decryptedUserId], (err, results) => {
   if (err) {
-    console.error('Error fetching ad and user data:', err);
     res.status(500).send('Error fetching ad and user data');
     return;
   }
-  console.log(req.params)
+
   res.json(results); // Send the first result
 });
 });
@@ -176,7 +170,7 @@ app.get('/ad/:id', function (req, res, next) {
   });
 });
 app.get('/interest/:id', function (req, res, next) {
-  console.log(req.params.id);
+
   let sql = `SELECT a.*
   FROM request i
   JOIN ads a ON i.ad_id = a.id
@@ -190,7 +184,7 @@ app.get('/interest/:id', function (req, res, next) {
   });
 });
 app.get('/request/:id', function (req, res, next) {
-  console.log(req.params.id);
+
   let sql = `SELECT i.user_id AS u_id, a.*, u.* FROM request i JOIN ads a ON i.ad_id = a.id JOIN users u ON i.user_id = u.id WHERE a.user_id = ?;
   
   ;
@@ -212,10 +206,9 @@ app.get('/request/:id', function (req, res, next) {
     WHERE id = ? `;
   
     const values = [ title, description,street, city, state,  price, type, type_of_rent,area,bed_count, room_count, amenities,adId];
-  console.log(values)
+
     pool.query(sql, values, function (err, result) {
       if (err) {
-        console.error('Error inserting data into database:', err);
         res.status(500).send('Error inserting data into database');
         return;
       }
@@ -225,7 +218,6 @@ app.get('/request/:id', function (req, res, next) {
   
   app.delete('/delete/:id', (req, res) => {
     const adId = req.params.id;
-    console.log(adId)
     const query = 'DELETE FROM ads WHERE id = ?';
     pool.query(query, [adId], function (err, result) {
         if (err) {
@@ -237,7 +229,6 @@ app.get('/request/:id', function (req, res, next) {
       });
       app.delete('/api/like/:id', (req, res) => {
         const adId = req.params.id;
-        console.log(adId)
         const query = 'DELETE FROM liked_property WHERE ad_id = ?';
         pool.query(query, [adId], function (err, result) {
             if (err) {
@@ -249,7 +240,6 @@ app.get('/request/:id', function (req, res, next) {
           });
           app.delete('/api/interest/:id', (req, res) => {
             const adId = req.params.id;
-            console.log(adId)
             const query = 'DELETE FROM liked_property WHERE ad_id = ?';
             pool.query(query, [adId], function (err, result) {
                 if (err) {
@@ -276,7 +266,6 @@ app.get('/request/:id', function (req, res, next) {
           
             pool.query(sqlInsertAd, values, (err, adResult) => {
               if (err) {
-                console.error('Error inserting ad into database:', err);
                 return res.status(500).send('Error inserting ad into database');
               }
           
@@ -317,7 +306,6 @@ app.get('/request/:id', function (req, res, next) {
 
 app.post('/upload', upload.single('image'), (req, res) => {
     const image = req.file.buffer;
-    console.log(image);
     const sql = 'INSERT INTO images (data) VALUES (?)';
     pool.query(sql, [image], (err, result) => {
         if (err) throw err;
@@ -342,4 +330,4 @@ const PORT = process.env.PORT || 3307;
 app.listen(3307, () => {
     console.log(`Server running on port ${PORT}`);
 });
-console.log(process.env.PORT);
+

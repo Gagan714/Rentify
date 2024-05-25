@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 const HomeSeller = ({user_id}) => {
     const navigate = useNavigate();
-    console.log(user_id)
     const goToPost = () => {
       navigate('/post-ad');
     };

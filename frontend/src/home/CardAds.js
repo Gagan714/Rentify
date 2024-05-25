@@ -14,7 +14,6 @@ const CardAds = ({ data }) => {
     const {user} = useContext(UserContext)
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [form] = Form.useForm();
-  console.log(data)
     const showModal = () => {
       form.setFieldsValue({ title: data.title, description: data.description,street: data.street, city: data.city, state: data.state, price: data.price,type: data.type, type_of_rent: data.type_of_rent,area: data.area,bed_count: data.bed_count,room_count: data.room_count});
       setIsModalVisible(true);
@@ -23,22 +22,18 @@ const CardAds = ({ data }) => {
     const handleOk = () => {
         form.validateFields()
           .then(values => {
-            console.log(values)
 
             axios.put(`https://full-stack-virid.vercel.app/update/${data.id}`, values)
               .then(response => {
-                console.log('Ad details updated successfully:', response.data);
                 setIsModalVisible(false);
                 toast.success("Details Updated!")
                 window.location.reload();
               })
               .catch(error => {
                 toast.error('Error updating ad details')
-                console.error('Error updating ad details:', error);
               });
           })
           .catch(info => {
-            console.log('Validate Failed:', info);
           });
       };
   
@@ -50,11 +45,9 @@ const CardAds = ({ data }) => {
           .then(response => {
             window.location.reload();
             toast.success('Deleted Successfully!')
-            console.log('Ad deleted successfully:', response.data);
           })
           .catch(error => {
             toast.error('Error while deleting')
-            console.error('Error deleting ad:', error);
           });
       };
   return (

@@ -28,7 +28,6 @@ const handleNavigation = () => {
         setLiked(response?.data?.liked);
       })
       .catch(error => {
-        console.error('Error fetching like status:', error);
       });
   }, [data.id, userId]);
 
@@ -37,18 +36,14 @@ const handleNavigation = () => {
     if(liked===true) {
     axios.post('https://full-stack-virid.vercel.app/api/like', { userId, adId: data?.id, liked: !liked })
       .then(response => {
-        console.log('Like status updated:', response.data);
       })
       .catch(error => {
-        console.error('Error updating like status:', error);
       });}
     if(liked===false){
       axios.delete(`https://full-stack-virid.vercel.app/api/like/${data?.id}`, { userId, adId: data?.id, liked: !liked })
       .then(response => {
-        console.log('successfully:', response.data);
       })
       .catch(error => {
-        console.error('Error ad:', error);
       });
     }
   };
@@ -59,20 +54,15 @@ const handleNavigation = () => {
     axios.post('https://full-stack-virid.vercel.app/api/interest', { userId, adId: data?.id, liked: !liked })
       .then(response => {
         toast.success("Request sent")
-        console.log('status updated:', response.data);
       })
       .catch(error => {
         toast.error("Error sending request")
-        console.error('Error updating like status:', error);
       });}
     if(interested===false){
       axios.delete(`https://full-stack-virid.vercel.app/api/interest/${data?.id}`, { userId, adId: data?.id, liked: !liked })
       .then(response => {
-
-        console.log('Ad deleted successfully:', response.data);
       })
       .catch(error => {
-        console.error('Error deleting ad:', error);
       });
     }
   };

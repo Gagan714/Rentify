@@ -33,7 +33,6 @@ const Interests = () => {
       setLoading(false)
       setAds(adsWithImages);
     }catch (error) {
-        console.error('Error fetching ads:', error);
       }
     };
 
