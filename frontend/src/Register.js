@@ -27,6 +27,7 @@ const Register = () => {
         phoneNumber: ''
     });
     const [confirmPasswordError, setConfirmPasswordError] = useState("");
+console.log(formValues)
     useEffect(() => {
         if (userId) {
             setTimeout(() => {
@@ -73,6 +74,7 @@ const Register = () => {
                 .catch(error => {
                     setLoading(false);
                     toast.error("Invalid Credentials")
+                    console.error('Error during sign-in', error);
                 });
         } else {
             if (formValues.password !== formValues.confirmPassword) {
@@ -95,6 +97,7 @@ const Register = () => {
                 })
                 .catch(error => {
                     toast.success("Error: Try Again")
+                    console.error('Error during sign-up', error);
                     setLoading(false);
 
                 });
