@@ -10,9 +10,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(cors());
 
-app.use(cors({
-  origin: 'https://rentify-rsmv-nz2lfsi4r-gagan-urs-projects.vercel.app' // Specify the origin allowed
-}));
+
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,

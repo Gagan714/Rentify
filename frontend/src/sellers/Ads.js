@@ -72,7 +72,7 @@ const handleFileChange = (e) => {
     }
 
     try {
-      const response = await axios.post('https://rentify-rsmv.vercel.app/add-post', formData, {
+      const response = await axios.post('https://rentify-ten-taupe.vercel.app/add-post', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

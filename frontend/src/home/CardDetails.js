@@ -35,7 +35,7 @@ const handleNavigation = () => {
   const handleLike = () => {
     setLiked(!liked);
     if(liked===true) {
-    axios.post('https://rentify-rsmv.vercel.app/api/like', { userId, adId: data?.id, liked: !liked })
+    axios.post('https://rentify-ten-taupe.vercel.app/api/like', { userId, adId: data?.id, liked: !liked })
       .then(response => {
         console.log('Like status updated:', response.data);
       })
@@ -43,7 +43,7 @@ const handleNavigation = () => {
         console.error('Error updating like status:', error);
       });}
     if(liked===false){
-      axios.delete(`https://rentify-rsmv.vercel.app/api/like/${data?.id}`, { userId, adId: data?.id, liked: !liked })
+      axios.delete(`https://rentify-ten-taupe.vercel.app/api/like/${data?.id}`, { userId, adId: data?.id, liked: !liked })
       .then(response => {
         console.log('successfully:', response.data);
       })
@@ -56,7 +56,7 @@ const handleNavigation = () => {
   const handleInterest = () => {
     setInterested(!interested);
     if(interested ===true) {
-    axios.post('https://rentify-rsmv.vercel.app/api/interest', { userId, adId: data?.id, liked: !liked })
+    axios.post('https://rentify-ten-taupe.vercel.app/api/interest', { userId, adId: data?.id, liked: !liked })
       .then(response => {
         toast.success("Request sent")
         console.log('status updated:', response.data);
@@ -66,7 +66,7 @@ const handleNavigation = () => {
         console.error('Error updating like status:', error);
       });}
     if(interested===false){
-      axios.delete(`https://rentify-rsmv.vercel.app/api/interest/${data?.id}`, { userId, adId: data?.id, liked: !liked })
+      axios.delete(`https://rentify-ten-taupe.vercel.app/api/interest/${data?.id}`, { userId, adId: data?.id, liked: !liked })
       .then(response => {
 
         console.log('Ad deleted successfully:', response.data);
