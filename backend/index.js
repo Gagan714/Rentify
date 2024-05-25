@@ -26,21 +26,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res, next) {
-    res.send('hi');
+    res.send('app is running');
 });
 
 app.get('/ads-page', (req, res) => {
   const { page, size } = req.query;
-  const offset = (page - 1) * size;
+  const hollow = (page - 1) * size;
   const limit = parseInt(size, 10);
 
-  const query = 'SELECT * FROM ads LIMIT ? OFFSET ?';
-  pool.query(query, [limit, offset], (error, results) => {
+  const query = 'SELECT * FROM ads LIMIT ? hollow ?';
+  pool.query(query, [limit, hollow], (error, results) => {
     if (error) {
       res.status(500).send('Error fetching apartments');
       return;
     }
-    // Fetch total count of items
     pool.query('SELECT COUNT(*) AS count FROM ads', (countError, countResults) => {
       if (countError) {
         res.status(500).send('Error fetching total count');
@@ -92,7 +91,7 @@ app.post('/filter', (req, res) => {
   }
 
   if (type_of_home) {
-    query += ' AND type = ?';
+    query +=' AND type = ?';
     queryParams.push(type_of_home);
   }
 
@@ -205,9 +204,9 @@ app.get('/request/:id', function (req, res, next) {
     SET title = ?, description = ?, street = ?, city = ?, state = ?, price = ?, type = ?, type_of_rent = ?, area = ?,bed_count = ?, room_count= ?,amenities= ?
     WHERE id = ? `;
   
-    const values = [ title, description,street, city, state,  price, type, type_of_rent,area,bed_count, room_count, amenities,adId];
+    const details = [ title, description,street, city, state,  price, type, type_of_rent,area,bed_count, room_count, amenities,adId];
 
-    pool.query(sql, values, function (err, result) {
+    pool.query(sql, details, function (err, result) {
       if (err) {
         res.status(500).send('Error inserting data into database');
         return;
@@ -249,9 +248,6 @@ app.get('/request/:id', function (req, res, next) {
                   res.status(200).json({ message: 'Ad deleted successfully', result });
                 });
               });
-   
-
-  
           app.post('/add-post', upload.single('image'), (req, res) => {
             const { user_id, title, description, type, price, home_type, bed_count, room_count, street, area, city, state, amenities } = req.body;
             const image = req.file ? req.file.buffer : null;
@@ -262,9 +258,9 @@ app.get('/request/:id', function (req, res, next) {
           
             const sqlInsertAd = `INSERT INTO ads (user_id, title, description, type_of_rent, price, type, bed_count, room_count, street, area, city, state, amenities, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
           
-            const values = [user_id, title, description, type, price, home_type, bed_count, room_count, street, area, city, state, amenities, image];
+            const details = [user_id, title, description, type, price, home_type, bed_count, room_count, street, area, city, state, amenities, image];
           
-            pool.query(sqlInsertAd, values, (err, adResult) => {
+            pool.query(sqlInsertAd, details, (err, adResult) => {
               if (err) {
                 return res.status(500).send('Error inserting ad into database');
               }

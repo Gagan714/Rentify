@@ -1,11 +1,11 @@
 const CryptoJS = require('crypto-js');
 
-const secretKey = 'thisismysecretkey';
+const srtk = 'mysecretkey';
 
 function decrypt(ciphertext) {
 
   try {
-    const bytes = CryptoJS.AES.decrypt(ciphertext, secretKey);
+    const bytes = CryptoJS.AES.decrypt(ciphertext, srtk);
     const originalText = bytes.toString(CryptoJS.enc.Utf8);
   
 

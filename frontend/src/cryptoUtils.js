@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 
-const secretKey = 'thisismysecretkey';
+const srtk = 'mysecretkey';
 
 export function encrypt(text) {
 
@@ -8,7 +8,7 @@ export function encrypt(text) {
     text = JSON.stringify(text);
   }
 
-  const encrypted = CryptoJS.AES.encrypt(text, secretKey).toString();
+  const encrypted = CryptoJS.AES.encrypt(text, srtk).toString();
 
 
   return encrypted;
