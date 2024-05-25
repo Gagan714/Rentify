@@ -1,6 +1,6 @@
+import CardDetails from './CardDetails';
 import React, { useState } from 'react'
 import { Card } from 'antd';
-import CardDetails from './CardDetails';
 
   const tabListNoTitle = [
     {

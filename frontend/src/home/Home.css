@@ -1,15 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
-.header{
-    width: 100vw;
-    height: 80vh;
-}
 .typewrite{
     font-family: "Merienda", cursive;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
   }
+.header{
+    width: 100vw;
+    height: 80vh;
+}
+.center-align{
+  display: flex;
+  justify-content: center; 
+margin: 2% 2%;
+padding-top: 1%;
+}
   .mainarea {
     background-color: #0B1522;
     display: flex;
@@ -22,12 +28,6 @@ border-radius: 10px;
 .page{
   color: #fff !important;
 }
-  .center-align{
-    display: flex;
-    justify-content: center; 
-  margin: 2% 2%;
-  padding-top: 1%;
-  }
   .center-align-mt0{
     display: flex;
     justify-content: center; 
@@ -73,21 +73,21 @@ border-radius: 10px;
   .color{
     color:#d65e19;
   }
-  .button-align:hover{
-    background-color: #d65e19!important;
-    color: aliceblue !important;
-    text-align: center;
-    font-size: large;
-    width: 100%;
-    margin-top: 5%;
-    border: none !important;
-  }
   .button:hover{
     background-color: #f37b36  !important; 
     color: aliceblue  !important;
     font-size: large;
     text-align: left;
     width: 30%;
+    margin-top: 5%;
+    border: none !important;
+  }
+  .button-align:hover{
+    background-color: #d65e19!important;
+    color: aliceblue !important;
+    text-align: center;
+    font-size: large;
+    width: 100%;
     margin-top: 5%;
     border: none !important;
   }
@@ -161,6 +161,12 @@ color:#fff;
 .area{
   margin: 0px 5px;
 }
+.button-post:hover{
+    width: 150px;
+    color: #ffffff!important;
+    background-color: #f77226 !important;
+    border: none;
+  }
 .header2-img{
   background-image: url("../images/rent.jpg");
   height: 40vh;
@@ -174,12 +180,6 @@ color:#fff;
   background-color: #f37b36;
   border: none;
 }
-.button-post:hover{
-    width: 150px;
-    color: #ffffff!important;
-    background-color: #f77226 !important;
-    border: none;
-  }
 .content-post{
   display: flex;
   flex-direction: column;

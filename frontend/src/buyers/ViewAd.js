@@ -1,12 +1,9 @@
+import {MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import React, { useEffect, useState } from 'react'
 import NavbarBuyer from './NavBarBuyer'
 import axios from 'axios';
-import {MailOutlined, PhoneOutlined } from '@ant-design/icons';
-
 import noImg from '../images/no_img.png'
-
 import { useParams } from 'react-router-dom';
-import CardAds from '../home/CardAds';
 import { Button,Spin } from 'antd';
 import Footer from '../Footer';
 import { toast } from 'react-toastify';

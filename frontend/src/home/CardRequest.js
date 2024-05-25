@@ -1,8 +1,7 @@
+import noImg from '../images/no_img.png'
 import React, { useState } from 'react'
 import { PhoneOutlined, IdcardOutlined,MailOutlined,EyeOutlined } from '@ant-design/icons';
 import {Button, Card, Modal, Form, Input, Radio, Select  } from 'antd';
-import axios from 'axios';
-import noImg from '../images/no_img.png'
 
 const { Meta } = Card;
 

@@ -14,14 +14,14 @@ const CardSlider = () => {
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const handlePrev = () => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1)%slides.length);
+
+    };
     const handleNext = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
     };
 
-    const handlePrev = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-
-    };
 
 
     return (

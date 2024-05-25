@@ -1,10 +1,10 @@
+import { UserContext } from '../UserContext';
+import CardAds from '../home/CardAds';
 import React, { useContext, useEffect, useState } from 'react';
 import NavbarBuyer from './NavBarBuyer';
 import Footer from '../Footer';
 import { Spin } from 'antd';
 import axios from 'axios';
-import CardAds from '../home/CardAds';
-import { UserContext } from '../UserContext';
 
 const Interests = () => {
   const { user } = useContext(UserContext);
