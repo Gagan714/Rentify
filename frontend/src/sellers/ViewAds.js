@@ -4,7 +4,6 @@ import CardAds from '../home/CardAds';
 import { Button, Spin  } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../UserContext';
-import Footer from '../Footer';
 
 const ViewAds = () => {
   const { user} = useContext(UserContext);
