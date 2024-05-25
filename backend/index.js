@@ -20,10 +20,10 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0
 });
+app.use(express.json());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
 
 app.get('/', function (req, res, next) {
     res.send('hi');
