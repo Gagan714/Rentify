@@ -2,19 +2,14 @@ import React, { useContext, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { HomeOutlined,SearchOutlined,UsergroupAddOutlined } from '@ant-design/icons';
-import home from '../images/home.png' 
 import '../home/Home.css';
 import {useTypewriter} from 'react-simple-typewriter';
-
-import { Button } from 'antd';
-import {RightOutlined} from '@ant-design/icons';
 import Filter from './Filter';
 import CardSlider from './CardSlider';
 import { UserContext } from '../UserContext';
 import Footer from '../Footer';
 import NavbarBuyer from './NavBarBuyer';
 import NavbarHome from './NavBarHome';
-import ScrollData from '../home/ScrollData';
 import { useNavigate } from 'react-router-dom';
 
 
