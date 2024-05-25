@@ -175,8 +175,8 @@ console.log(formValues)
             <div className="Auth-form-container col-md-6">
                 <div className="row">
                     <div className='heading'>
-                        <h2 className='typewrite'>Rentify</h2>
-                        <p className='typewrite'>Renting made simple!</p>
+                        <h2>Rentify</h2>
+                        <p>Renting made simple!</p>
                     </div>
                     <form className="Auth-form" onSubmit={handleSubmit}>
                         <div className="Auth-form-content">
