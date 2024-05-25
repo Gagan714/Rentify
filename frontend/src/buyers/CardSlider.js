@@ -4,12 +4,12 @@ import ReactCardSlider from 'react-card-slider-component';
 const CardSlider = () => {
     const sliderClick = ""
     const slides = [
-        {image: require("../images/apartment.jpg"), title: "Zoe PGs", description: "Shared room for boys"},
+        {image: require("../images/1.jpg"), title: "Zoe PGs", description: "Shared room for boys"},
         {image: require("../images/lake.jpg"), title: "Lake View Apartment", description: "Beautiful Lake View Apartment"},
-        {image: require("../images/housing-apartment.jpg"), title: "Appaswamy Apartments", description: "Suitable for families and children"},
+        {image: require("../images/2.jpg"), title: "Apartments", description: "Suitable for families and children"},
         {image: require("../images/STUDIO-RSX-6.jpg"), title: "Individual Villa", description: "Individual Villa with all amenities"},
         {image: require("../images/villa.jpg"), title: "Lotus Villa", description: "Best Villa in Town"},
-        {image: require("../images/apartment.jpg"), title: "2BHK", description: "Affordable and spacious",clickEvent:sliderClick},
+        {image: require("../images/1.jpg"), title: "2BHK", description: "Affordable and spacious",clickEvent:sliderClick},
         {image: require("../images/main-pg.jpeg"), title: "1BHK", description: "Simple and Affordable 1BHK Home "},
     ];
 

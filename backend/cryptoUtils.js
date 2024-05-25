@@ -14,7 +14,6 @@ function decrypt(ciphertext) {
     }
     return originalText;
   } catch (error) {
-    throw new Error('Invalid encrypted text');
   }
 }
 
